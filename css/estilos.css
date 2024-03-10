@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* Primary */
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+
+    /* Font Family */
+    --Poppins: 'Poppins'
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--Off-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--Poppins);
+}
+
+.container{
+    width: 650px;
+    height: 480px;
+    background-color: var(--White);
+    border-radius: 15px;
+    border-bottom-right-radius: 35%;
+}
+
+.container .card{
+    width: 85%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .time-day{
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.time-day div{
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.time-day div input{
+    width: 100%;
+    font-size: 25px;
+    height: 55px;
+    border: 1px solid var(--Light-grey);
+    border-radius: 5px;
+    font-weight: bold;
+    color: var(--Off-black);
+    caret-color: var(--Purple);
+}
+
+.time-day div input::placeholder{
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    color: var(--Smokey-grey);
+    font-size: 25px;  
+}
+
+.time-day div input:focus-visible{
+    outline: 1px solid var(--Purple);
+}
+
+.time-day div span{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--Smokey-grey);
+}
+
+.time-day div .error-color{
+    color: var(--Light-red);
+}
+
+.time-day div .error-color-input:focus-visible,
+.time-day div .error-color-input{
+    outline: 1px solid var(--Light-red);
+    border: 1px solid var(--Light-red);
+}
+
+
+.time-day div p{
+    font-size: 10px;
+    color: var(--Light-red);
+    height: 18px;
+}
+
+input[type="text" i] {
+    padding-block: 1px;
+    padding-inline: 15px;
+}
+
+.icon-arrow{
+    width: 100%;
+    position: relative;
+}
+
+.icon-arrow button{
+    background-color: var(--Purple);
+    position: absolute;
+    padding: 20px 20px;
+    border-radius: 100%;
+    right: 0;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.icon-arrow button:hover{
+    background-color: var(--Off-black);
+}
+
+.card .card-date{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card-date section{
+    width: 100%;
+    display: flex;
+    height: 15%;
+    gap: 10px;
+}
+
+.card-date section span:first-child{
+    justify-content: end;
+    font-size: 70px;
+    color: var(--Purple);
+    font-weight: bold;
+}
+
+.card-date section span{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 58px;
+    font-weight: bold;
+}
+
+@media(width <= 530px){
+    .container{
+        width: 100%;
+        height: 400px;
+    }
+    .container .card{
+        width: 80%;
+    }
+    .card .time-day{
+        height: 30%;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        gap: 10px;
+    }
+    .time-day div{
+        width: 28%;
+    }
+    .time-day div input{
+        height: 30px;
+    }
+    .time-day div input::placeholder{
+        font-size: 15px;
+    }
+    .time-day div span{
+        font-size: 9px;
+    }
+    .time-day div p{
+        font-size: 6px;
+    }
+    .icon-arrow button{
+        padding: 10px 10px;
+        margin-right: 40%;
+    }
+    .card-date section span:first-child{
+        font-size: 40px;
+        margin-left: 20px;
+    }
+    .card-date section span{
+        font-size: 38px;
+    }
+}
